@@ -2,3 +2,14 @@
 *.suo
 *.user
 *.db
+
+# 빌드 산출물
+x64/
+x86/
+Debug/
+Release/
+*.exe
+*.pdb
+*.ilk
+*.lib
+*.obj
