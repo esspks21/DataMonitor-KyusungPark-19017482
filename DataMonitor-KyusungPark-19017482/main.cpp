@@ -235,7 +235,9 @@ namespace con {
         auto now = std::chrono::system_clock::now();
         std::time_t t = std::chrono::system_clock::to_time_t(now);
         char buf[32];
-        std::strftime(buf, sizeof(buf), "%Y-%m-%d %H:%M:%S", std::localtime(&t));
+        struct tm tm_info {};
+        localtime_s(&tm_info, &t);
+        std::strftime(buf, sizeof(buf), "%Y-%m-%d %H:%M:%S", &tm_info);
         std::cout << "  조회 시각: " << buf << "\n";
         sep('=');
     }
